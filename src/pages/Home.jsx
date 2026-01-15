@@ -1,23 +1,13 @@
-import { useNavigate } from "react-router-dom";
-
-function Home() {
-  const navigate = useNavigate();
-
+export default function Home() {
   return (
     <section className="home">
       <div className="home-img">
-        <img src="/logo.png" className="home-img-logo" />
+        <img src="/logo.png" alt="logo" className="home-img-logo" />
         <div className="home-buttons">
-          <button onClick={() => navigate("/productos")}>
-            Ver productos
-          </button>
-          <button onClick={() => navigate("/contacto")}>
-            Contáctanos
-          </button>
+          <button>Ver productos</button>
+          <button>Contáctanos</button>
         </div>
       </div>
     </section>
   );
 }
-
-export default Home;
