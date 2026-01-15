@@ -4,8 +4,8 @@ import { ChevronDown } from "lucide-react";
 
 function Header() {
   const navigate = useNavigate();
-  const [openProductos, setOpenProductos] = useState(false);
-  const [openNosotros, setOpenNosotros] = useState(false);
+  const [OpenProductos, setOpenProductos] = useState(false);
+  const [OpenNosotros, setOpenNosotros] = useState(false);
 
   return (
     <header className="header">
