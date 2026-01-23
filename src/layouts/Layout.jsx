@@ -1,6 +1,6 @@
 import { Outlet, useNavigate} from "react-router-dom";
 import { useState} from "react";
-import { ChevronDown } from "lucide-react";
+import { IoIosArrowDown } from "react-icons/io";
 
 export default function Layout() {
   const navigate = useNavigate();
@@ -46,7 +46,7 @@ export default function Layout() {
 
             <ul className="nav_list">
               <li onClick={openModal}>
-                PRODUCTOS <span><ChevronDown size={35} /></span>
+                PRODUCTOS <span><IoIosArrowDown /></span>
               </li>
 
               <li onClick={() => navigate("/reconocimientos")}>
@@ -54,7 +54,7 @@ export default function Layout() {
               </li>
 
               <li onClick={openNosotros}>
-                NOSOTROS <span><ChevronDown size={35} /></span>
+                NOSOTROS <span><IoIosArrowDown /></span>
               </li>
 
               <li onClick={() => navigate("/trabajadores")}>
