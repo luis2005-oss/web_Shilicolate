@@ -65,7 +65,7 @@ export default function Layout() {
         </header>
 
         {/* ===== MAIN (DINÁMICO) ===== */}
-        <main>
+        <main className="main">
           <Outlet />
         </main>
 

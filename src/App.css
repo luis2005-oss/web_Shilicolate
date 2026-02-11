@@ -1,18 +1,9 @@
 @import "styles/colors.css";
 
-#root {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
 .container {
-  width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -206,11 +197,18 @@ body {
 }
 
 
+/*Main*/
+.main {
+  background-color: var(--fondo1);
+  width: 100%;
+  height: 100%;
+}
+
 
 /* Footer */
 .footer {
   background-color: var(--fondo_footer);
-  width: 87.9%;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -262,8 +260,9 @@ body {
   top: 10vh;
   left: 60vh;
   display: flex;
+  flex-direction: column;
   position: relative;
-  background: var(--fondo_o_texto);
+  background: var(--fondo_modals);  
   border-top: 1vh solid #d4af37;
   border-radius: 1.5vw;
   padding: 1.5vw;
@@ -275,6 +274,7 @@ body {
 .productos-grid {
   display: grid;
   height: 3vh;
+  gap: 3vh;
 }
 
 /* Tarjeta de producto */
@@ -323,17 +323,18 @@ body {
   left: 125vh;
   display: flex;
   position: relative;
-  background: var(--fondo_o_texto);
+  background: var(--fondo_modals);
   border-top: 1vh solid #d4af37;
   border-radius: 1.5vw;
   padding: 1.5vw;
   width: 11%;
-  height: 12%;
+  height: 14%;
 }
 
 .nosotros-options {
   display: flex;
   flex-direction: column;
+  gap: 3vh;
 }
 
 .nosotros-item {

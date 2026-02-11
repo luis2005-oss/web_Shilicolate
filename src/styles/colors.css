@@ -1,7 +1,9 @@
 :root {
   --button1: #C59E51;
   --border1: #3D210D;
-  --fondo_o_texto: white;
+  --fondo1: #D4B895;
+  --fondo_modals: #EDEDED;
+  --text_header: #000000;
   --fondo_footer: #4B4B4B;
   --fondo_products: #936B1C;
   --texto_products: #3D150D;
