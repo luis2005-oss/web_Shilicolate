@@ -1,20 +1,39 @@
-import { Outlet, useNavigate} from "react-router-dom";
-import { useState} from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 export default function Layout() {
   const navigate = useNavigate();
 
-  const safeNavigate = (path) => {
-  setIsModalOpen(false);
-  setIsNosotrosOpen(false);
-  navigate(path);
-};
-
-
+  /* ===== STATES ===== */
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isNosotrosOpen, setIsNosotrosOpen] = useState(false);
 
+  /* ===== NAVIGACIÓN SEGURA (CAMBIO DE PÁGINA) ===== */
+  const safeNavigate = (path) => {
+    setIsModalOpen(false);
+    setIsNosotrosOpen(false);
+    navigate(path);
+  };
+
+  /* ===== SCROLL A SECCIÓN (MISMA PÁGINA) ===== */
+const scrollToProduct = (id) => {
+  setIsModalOpen(false);
+  setIsNosotrosOpen(false);
+
+  // Siempre ir primero a /products
+  navigate("/products");
+
+  // Esperar a que Products se monte
+  setTimeout(() => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 350);
+};
+
+  /* ===== OPEN MODALS ===== */
   const openModal = (e) => {
     e.stopPropagation();
     setIsModalOpen(true);
@@ -25,6 +44,7 @@ export default function Layout() {
     setIsNosotrosOpen(true);
   };
 
+  /* ===== CLOSE MODAL AL CLICK FUERA ===== */
   const handleOverlayClick = (closeFn) => (e) => {
     if (e.target === e.currentTarget) closeFn(false);
   };
@@ -33,7 +53,7 @@ export default function Layout() {
     <>
       <section className="container">
 
-        {/* ===== HEADER (FIJO) ===== */}
+        {/* ===== HEADER ===== */}
         <header className="header">
           <nav className="nav">
             <img
@@ -46,39 +66,39 @@ export default function Layout() {
 
             <ul className="nav_list">
               <li onClick={openModal}>
-                PRODUCTOS <span><IoIosArrowDown /></span>
+                PRODUCTOS <IoIosArrowDown />
               </li>
 
-              <li onClick={() => navigate("/reconocimientos")}>
+              <li onClick={() => safeNavigate("/reconocimientos")}>
                 RECONOCIMIENTOS
               </li>
 
               <li onClick={openNosotros}>
-                NOSOTROS <span><IoIosArrowDown /></span>
+                NOSOTROS <IoIosArrowDown />
               </li>
 
-              <li onClick={() => navigate("/trabajadores")}>
+              <li onClick={() => safeNavigate("/trabajadores")}>
                 TRABAJADORES
               </li>
             </ul>
           </nav>
         </header>
 
-        {/* ===== MAIN (DINÁMICO) ===== */}
+        {/* ===== MAIN ===== */}
         <main className="main">
           <Outlet />
         </main>
 
-        {/* ===== FOOTER (FIJO) ===== */}
+        {/* ===== FOOTER ===== */}
         <footer className="footer">
           <div className="footer-column">
             <h3>PRODUCTOS</h3>
             <ul>
-              <li>Shilibombones</li>
-              <li>Chocotejas</li>
-              <li>Chocolate comestible</li>
-              <li>Chocolate en chapa</li>
-              <li>Chocolate en caja</li>
+              <li onClick={() => scrollToProduct("shilibombones")}>Shilibombones</li>
+              <li onClick={() => scrollToProduct("chocotejas")}>Chocotejas</li>
+              <li onClick={() => scrollToProduct("chocolate-comestible")}>Chocolate comestible</li>
+              <li onClick={() => scrollToProduct("chocolate-en-chapa")}>Chocolate en chapa</li>
+              <li onClick={() => scrollToProduct("chocolate-en-caja")}>Chocolate en caja</li>
             </ul>
           </div>
 
@@ -89,8 +109,8 @@ export default function Layout() {
           <div className="footer-column">
             <h3>NOSOTROS</h3>
             <ul>
-              <li>Nuestra historia</li>
-              <li>Misión y visión</li>
+              <li onClick={() => safeNavigate("/nosotros/historia")}>Nuestra historia</li>
+              <li onClick={() => safeNavigate("/nosotros/mision-vision")}>Misión y visión</li>
             </ul>
           </div>
 
@@ -106,41 +126,29 @@ export default function Layout() {
           className="modal-overlay"
           onClick={handleOverlayClick(setIsModalOpen)}
         >
-          <div className="modal-content">
+          <div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="productos-grid">
 
-              <div
-                className="producto-card"
-                onClick={() => safeNavigate("/producto/shilibombones")}
-              >
+              <div className="producto-card" onClick={() => scrollToProduct("shilibombones")}>
                 <h3>Shilibombones</h3>
               </div>
 
-              <div
-                className="producto-card"
-                onClick={() => safeNavigate("/producto/chocotejas")}
-              >
+              <div className="producto-card" onClick={() => scrollToProduct("chocotejas")}>
                 <h3>Chocotejas</h3>
               </div>
 
-              <div
-                className="producto-card"
-                onClick={() => safeNavigate("/producto/chocolate-comestible")}
-              >
+              <div className="producto-card" onClick={() => scrollToProduct("chocolate-comestible")}>
                 <h3>Chocolate comestible</h3>
               </div>
 
-              <div
-                className="producto-card"
-                onClick={() => safeNavigate("/producto/chocolate-en-chapa")}
-              >
+              <div className="producto-card" onClick={() => scrollToProduct("chocolate-en-chapa")}>
                 <h3>Chocolate en chapa</h3>
               </div>
 
-              <div
-                className="producto-card"
-                onClick={() => safeNavigate("/producto/chocolate-en-caja")}
-              >
+              <div className="producto-card" onClick={() => scrollToProduct("chocolate-en-caja")}>
                 <h3>Chocolate en caja</h3>
               </div>
 
@@ -155,7 +163,10 @@ export default function Layout() {
           className="modal-overlayy"
           onClick={handleOverlayClick(setIsNosotrosOpen)}
         >
-          <div className="nosotros-modal">
+          <div
+            className="nosotros-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="nosotros-options">
 
               <div

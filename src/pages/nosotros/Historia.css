@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.historia {
+  padding: 2vw;
+}
+
+.historia h1 {
+  margin-left: 3vw;
+  font-family: "Lateef";
+  font-size: 6vh;
+}
+
+.historia-item {
+  padding: 2vh;
+  display: flex;
+  gap: 4vw;
+  margin-top: 1vw;
+  margin-bottom: 3vw;
+  align-items: center;
+}
+
+.historia-item img {
+  width: 43vw;
+  height: 34vw;
+  border-radius: 5vh;
+}
+
+.historia-item p {
+  text-align: justify;
+  font-size: 2vw;
+}

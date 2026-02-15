@@ -1,0 +1,54 @@
+.max_container_trabajadores {
+    height: 44vw;
+    width: 100%;
+}
+
+.trabajadores {
+    display: flex;
+    padding: 1vw;
+    gap: 6vw;
+    margin-bottom: 2vw;
+}
+
+.trabajadores img {
+    display: flex;
+    margin-top: 4vw;
+    margin-left: 7vw;
+    width: 65vw;
+    height: 65vh;
+    border-radius: 50%;
+}
+
+.info_trabajador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 8vw;
+}
+
+.info_trabajador_nombre {
+    margin-bottom: 2vw;
+}
+
+.info_trabajador_nombre h3{
+    font-size: 4rem;
+    font-weight: normal;
+    font-family: 'Lateef';
+    margin: 0;
+    line-height: 1;
+}
+
+.info_trabajador h4 {
+    font-size: 3rem;
+    font-weight: normal;
+    font-family: 'Lateef';
+    margin: 0;
+}
+
+.info_trabajador p {
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-family: 'Lateef';
+    text-align: justify;
+    margin: 0;
+}

@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Reconocimientos from "./pages/Reconocimientos";
 import Trabajadores from "./pages/Trabajadores";
 import Contacto from "./pages/Contacto";
-import Shilibombones from "./pages/productos/Shilibombones";
+import Products from "./pages/Products";
 import Historia from "./pages/nosotros/Historia";
 import MisionVision from "./pages/nosotros/MisionVision";
 
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       { path: "reconocimientos", element: <Reconocimientos /> },
       { path: "trabajadores", element: <Trabajadores /> },
       { path: "contacto", element: <Contacto/> },
-      { path: "producto/shilibombones", element: <Shilibombones /> },
+      { path: "products", element: <Products /> },
       { path: "nosotros/historia", element: <Historia /> },
       { path: "nosotros/mision-vision", element: <MisionVision /> },
     ],
