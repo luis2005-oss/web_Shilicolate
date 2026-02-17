@@ -1,0 +1,70 @@
+.container_MVV {
+    padding: 2vw;
+}
+
+.container_MVV h1 {
+    margin-left: 3vw;
+    font-family: "Lateef";
+    font-size: 6vh;
+}
+
+.mision_vision {
+    padding: 3vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    margin-top: 1vw;
+    margin-bottom: 3vw;
+    background-color: var(--fondo_mvv);
+    border-radius: 2vh;
+}
+
+.mision_vision h3 {
+    font-size: 2.3vw;
+    font-family: "Lateef";
+}
+
+.mision_vision p {
+    text-align: justify;
+    font-size: 1.5vw;
+}
+
+.valores_container {
+    padding: 4vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    margin-top: 1vw;
+    margin-bottom: 3vw;
+    background-color: var(--fondo_mvv);
+    border-radius: 2vh;
+}
+
+.valores_container h3 {
+    display: flex;
+    flex-direction: column;
+    font-size: 2.3vw;
+    font-family: "Lateef";
+}
+
+.valores {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fondo_mvv);
+    padding: 2vw;
+    border-radius: 2vh;
+}
+
+.valores h4 {
+    font-size: 2vw;
+    font-family: "Lateef";
+}
+
+.valores ul {
+    margin-left: 2vw;
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+    font-size: 1.5vw;
+    gap: 0.5vw;
+}
