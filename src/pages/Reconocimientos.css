@@ -1,71 +1,62 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-html, body, #root {
-    height: 100%;
-}
+    .max-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 6vw;
+    }
 
-.max-container {
-    margin-left: 3vw;
-    min-height: 100vh;
-    width: 100%;
-    background-color: var(--fondo1);
-}
-
-.max-container h1 {
-    margin-left: 3.4vw;
-    font-family: "Lateef";
+    .title {
     font-size: 6vh;
-    margin-top: 1vw;
-}
-
-.title {
-    margin-bottom: 1vw;
-    font-size: 5vh;
+    margin: 0 0 -7vh 2.6vw;
     font-family: 'Lateef';
     font-weight: 700;
     color: var(--text_header);
 }
 
-
-.reconocimientos_cards {
+    .reconocimientos_cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3vw;
-    padding: 3vh;
-    padding-top: 0;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 12px;
-    align-items: center;
-    text-align: center;
-    height: 68vh;
+    padding: 0 3vh;
+    margin-left: 1vw;
     width: 100%;
+    height: auto;
+    margin-bottom: 3vw;
 }
 
-.card img {
-    width: 22vw;
-    height: 25vw;
-    object-fit: cover;
-    border-radius: 8px;
-}
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        background: #f5f5f5;
+        padding: 20px;
+        border-radius: 12px;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        width: 100%;
+    }
 
-.card h3 {
-    font-size: 4vh;
-    color: var(--text_header);
-}
+    .card img {
+        width: 22vw;
+        height: 25vw;
+        object-fit: cover;
+        border-radius: 8px;
+    }
 
-.card p {
-    font-size: 2vh;
-    text-align: justify;
-    padding: 2vh;
-}
+    .card h3 {
+        font-size: 4vh;
+        color: var(--text_header);
+    }
+
+    .card p {
+        font-size: 2vh;
+        text-align: justify;
+        padding: 2vh;
+    }

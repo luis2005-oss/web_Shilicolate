@@ -5,26 +5,24 @@ import { IoIosArrowDown } from "react-icons/io";
 export default function Layout() {
   const navigate = useNavigate();
 
-  /* ===== STATES ===== */
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isNosotrosOpen, setIsNosotrosOpen] = useState(false);
 
-  /* ===== NAVIGACIÓN SEGURA (CAMBIO DE PÁGINA) ===== */
+
   const safeNavigate = (path) => {
     setIsModalOpen(false);
     setIsNosotrosOpen(false);
     navigate(path);
   };
 
-  /* ===== SCROLL A SECCIÓN (MISMA PÁGINA) ===== */
 const scrollToProduct = (id) => {
   setIsModalOpen(false);
   setIsNosotrosOpen(false);
 
-  // Siempre ir primero a /products
   navigate("/products");
 
-  // Esperar a que Products se monte
+
   setTimeout(() => {
     const section = document.getElementById(id);
     if (section) {
@@ -33,7 +31,7 @@ const scrollToProduct = (id) => {
   }, 350);
 };
 
-  /* ===== OPEN MODALS ===== */
+
   const openModal = (e) => {
     e.stopPropagation();
     setIsModalOpen(true);
@@ -44,7 +42,7 @@ const scrollToProduct = (id) => {
     setIsNosotrosOpen(true);
   };
 
-  /* ===== CLOSE MODAL AL CLICK FUERA ===== */
+
   const handleOverlayClick = (closeFn) => (e) => {
     if (e.target === e.currentTarget) closeFn(false);
   };
