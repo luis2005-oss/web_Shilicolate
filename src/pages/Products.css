@@ -1,18 +1,21 @@
 .max-container {
-  width: 97%;
+  width: 100%;
   padding: 5vh;
   display: flex;
   flex-direction: column;
-  gap: 15vw;
-  margin-bottom: 10vw;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2vw;
+  margin-bottom: 1vw;
 }
 
 .producto {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 5vw;
   margin: 0 auto;
-  height: 30vw;
   width: 100%;
   padding: 3vw;
 }
@@ -22,7 +25,6 @@
 }
 
 .img-responsive {
-  margin-top: 6vw;
   width: 70vw;
   max-width: 100%;
   height: auto;
@@ -30,7 +32,6 @@
 
 .descripcion-producto {
   width: 100%;
-  height: 13vw;
 } 
 
 .descripcion-producto h2 {
@@ -40,6 +41,7 @@
 }
 
 .descripcion-producto p {
+  text-align: justify;
   font-size: 4vh;
   line-height: 1.7;
   color: #3b1f14;

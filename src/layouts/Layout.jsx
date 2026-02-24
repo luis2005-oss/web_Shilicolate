@@ -26,9 +26,15 @@ const scrollToProduct = (id) => {
   setTimeout(() => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -100;
+      const y =
+        section.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
-  }, 350);
+  }, 500);
 };
 
 
@@ -95,8 +101,8 @@ const scrollToProduct = (id) => {
               <li onClick={() => scrollToProduct("shilibombones")}>Shilibombones</li>
               <li onClick={() => scrollToProduct("chocotejas")}>Chocotejas</li>
               <li onClick={() => scrollToProduct("chocolate-comestible")}>Chocolate comestible</li>
-              <li onClick={() => scrollToProduct("chocolate-en-chapa")}>Chocolate en chapa</li>
-              <li onClick={() => scrollToProduct("chocolate-en-caja")}>Chocolate en caja</li>
+              <li onClick={() => scrollToProduct("chocolate-chapa")}>Chocolate en chapa</li>
+              <li onClick={() => scrollToProduct("chocolate-caja")}>Chocolate en caja</li>
             </ul>
           </div>
 
@@ -142,11 +148,11 @@ const scrollToProduct = (id) => {
                 <h3>Chocolate comestible</h3>
               </div>
 
-              <div className="producto-card" onClick={() => scrollToProduct("chocolate-en-chapa")}>
+              <div className="producto-card" onClick={() => scrollToProduct("chocolate-chapa")}>
                 <h3>Chocolate en chapa</h3>
               </div>
 
-              <div className="producto-card" onClick={() => scrollToProduct("chocolate-en-caja")}>
+              <div className="producto-card" onClick={() => scrollToProduct("chocolate-caja")}>
                 <h3>Chocolate en caja</h3>
               </div>
 

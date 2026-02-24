@@ -33,8 +33,8 @@ export default function Reconocimientos() {
   ];
 
   return (
-    <section className="max-container">
-      <h1 className="title">Reconocimientos</h1>
+    <section className="max-container_reconocimientos">
+      <h1 className="title_reconocimientos">Reconocimientos</h1>
       <div className="reconocimientos_cards">
         {reconocimientos.map((item) => (
           <div className="card" key={item.id}>

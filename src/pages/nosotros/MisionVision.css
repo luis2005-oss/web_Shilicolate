@@ -1,70 +1,164 @@
 .container_MVV {
-    padding: 2vw;
+  padding: 2vw;
 }
 
 .container_MVV h1 {
-    margin-left: 3vw;
-    font-family: "Lateef";
-    font-size: 6vh;
+  margin-left: 3vw;
+  font-family: "Lateef";
+  font-size: 6vh;
 }
 
 .mision_vision {
-    padding: 3vh;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5vw;
-    margin-top: 1vw;
-    margin-bottom: 3vw;
-    background-color: var(--fondo_mvv);
-    border-radius: 2vh;
+  padding: 3vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+  margin-top: 1vw;
+  margin-bottom: 3vw;
+  background-color: var(--fondo_mvv);
+  border-radius: 2vh;
 }
 
 .mision_vision h3 {
-    font-size: 2.3vw;
-    font-family: "Lateef";
+  font-size: 2.3vw;
+  font-family: "Lateef";
 }
 
 .mision_vision p {
-    text-align: justify;
-    font-size: 1.5vw;
+  text-align: justify;
+  font-size: 1.5vw;
 }
 
 .valores_container {
-    padding: 4vh;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5vw;
-    margin-top: 1vw;
-    margin-bottom: 3vw;
-    background-color: var(--fondo_mvv);
-    border-radius: 2vh;
+  padding: 4vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+  margin-top: 1vw;
+  margin-bottom: 3vw;
+  background-color: var(--fondo_mvv);
+  border-radius: 2vh;
 }
 
 .valores_container h3 {
-    display: flex;
-    flex-direction: column;
-    font-size: 2.3vw;
-    font-family: "Lateef";
+  display: flex;
+  flex-direction: column;
+  font-size: 2.3vw;
+  font-family: "Lateef";
 }
 
 .valores {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--fondo_mvv);
-    padding: 2vw;
-    border-radius: 2vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fondo_mvv);
+  padding: 2vw;
+  border-radius: 2vh;
 }
 
 .valores h4 {
-    font-size: 2vw;
-    font-family: "Lateef";
+  font-size: 2vw;
+  font-family: "Lateef";
 }
 
 .valores ul {
+  margin-left: 2vw;
+  display: flex;
+  flex-direction: column;
+  padding: 1vw;
+  font-size: 1.5vw;
+  gap: 0.5vw;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .container_MVV h1 {
+    font-size: 5vh;
     margin-left: 2vw;
-    display: flex;
-    flex-direction: column;
-    padding: 1vw;
-    font-size: 1.5vw;
-    gap: 0.5vw;
+  }
+
+  .mision_vision h3,
+  .valores_container h3 {
+    font-size: 3vw;
+  }
+
+  .mision_vision p {
+    font-size: 2.2vw;
+  }
+
+  .valores h4 {
+    font-size: 2.5vw;
+  }
+
+  .valores ul {
+    font-size: 2.2vw;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .container_MVV {
+    padding: 5vw;
+  }
+
+  .container_MVV h1 {
+    font-size: 4.5vh;
+    margin-left: 0;
+    margin-bottom: 4vh;
+  }
+
+  .mision_vision,
+  .valores_container {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .valores_container {
+    gap: 2vh;
+  }
+
+  .mision_vision h3,
+  .valores_container h3 {
+    font-size: 22px;
+  }
+
+  .mision_vision p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .valores {
+    padding: 16px;
+  }
+
+  .valores h4 {
+    font-size: 18px;
+  }
+
+  .valores ul {
+    font-size: 15px;
+    margin-left: 18px;
+    gap: 8px;
+  }
+}
+
+/* MOBILE PEQUEÑO */
+@media (max-width: 480px) {
+  .container_MVV h1 {
+    font-size: 4vh;
+  }
+
+  .valores_container {
+    gap: 2vh;
+  }
+
+  .mision_vision h3,
+  .valores_container h3 {
+    font-size: 20px;
+  }
+
+  .valores ul {
+    font-size: 14px;
+  }
 }
